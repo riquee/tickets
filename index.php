@@ -11,6 +11,10 @@
 
   <?php
 
+  require_once './global.php';
+
+  echo $__ENV['S3_BUCKET'];
+
   // if ($__POST['btn_login']) {
   // }
   ?>
