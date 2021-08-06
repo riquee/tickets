@@ -1,8 +1,6 @@
 <?php
 
-$host = 'localhost';
-$username = 'riquee';
-$password = 'Somsm123';
+require_once 'global.php';
 
 class Connection
 {
@@ -11,7 +9,11 @@ class Connection
   public static function getConn()
   {
     if (!self::$instance) :
-      self::$instance = new PDO('mysql'); 
+      self::$instance = new PDO(
+        'mysql:host=' . $_ENV['MYSQL_HOST'] . 'dbname=sgpWeb;',
+        $_ENV['MYSQL_USER'],
+        $_ENV['MYSQL_PASSWORD']
+      );
     else :
       return self::$instance;
     endif;

@@ -10,7 +10,7 @@
 <body>
 
   <?php
-  echo $_ENV['TEST'];
+
   // if ($__POST['btn_login']) {
   // }
   ?>
