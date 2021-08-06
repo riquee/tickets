@@ -10,10 +10,7 @@
 <body>
 
   <?php
-
-  require_once './global.php';
-
-  echo $__ENV['S3_BUCKET'];
+  require_once './models/connection.php'
 
   // if ($__POST['btn_login']) {
   // }

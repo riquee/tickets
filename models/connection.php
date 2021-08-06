@@ -1,5 +1,7 @@
 <?php
 
+require_once 'global.php';
+
 class Connection
 {
   private static $instance;
@@ -17,3 +19,5 @@ class Connection
     endif;
   }
 }
+
+echo $_ENV['MYSQL_USER'];
