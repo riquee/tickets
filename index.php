@@ -8,6 +8,13 @@
 </head>
 
 <body>
+
+  <?php
+  echo $_ENV['TEST'];
+  // if ($__POST['btn_login']) {
+  // }
+  ?>
+
   <div class="section"></div>
   <main>
     <center>
@@ -20,7 +27,7 @@
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form class="col s12" method="post">
+          <form action="<?php echo $__SERVER['PHP-SELF'] ?>;" class="col s12" method="post">
             <div class='row'>
               <div class='col s12'>
               </div>
@@ -55,8 +62,8 @@
     <div class="section"></div>
   </main>
 
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 </body>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
 
 </html>
