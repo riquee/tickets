@@ -1,6 +1,6 @@
 <?php
 
-require_once 'global.php';
+require_once 'configs.php';
 
 class Connection
 {
@@ -8,16 +8,14 @@ class Connection
 
   public static function getConn()
   {
-    if (!self::$instance) :
+    if (!self::$instance) {
       self::$instance = new PDO(
-        'mysql:host=' . $_ENV['MYSQL_HOST'] . 'dbname=sgpWeb;',
+        'mysql:host=' . $_ENV['MYSQL_HOST'] . ';dbname=' . $_ENV['MYSQL_DBNAME'],
         $_ENV['MYSQL_USER'],
-        $_ENV['MYSQL_PASSWORD']
+        $_ENV['MYSQL_PASSWORD'],
       );
-    else :
-      return self::$instance;
-    endif;
+    }
+
+    return self::$instance;
   }
 }
-
-echo $_ENV['MYSQL_USER'];
