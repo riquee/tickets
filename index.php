@@ -10,17 +10,17 @@
 <body>
 
   <?php
-  
+
   require_once './controller/User.php';
 
-  if($_POST['username']) {
+  if ($_POST['username']) {
 
-    $user = User::verify($_POST['username'], $_POST['email']);
+    $user = User::verify($_POST['username'], $_POST['password']);
 
-    if($user) :
+    if ($user) :
       header('Location: dashboard.php');
-    else:
-      echo "USUARIO INVALIDO";
+    else :
+      echo '<div class="card-panel red lighten-3">Usuario ou senha invalidos</div>';
     endif;
   }
   ?>
@@ -45,14 +45,14 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='text' name='username' id='username' />
+                <input class='validate' type='text' name='username' id='username' required/>
                 <label for='username'>Digite o nome do usuario</label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='password' name='password' id='password' />
+                <input class='validate' type='password' name='password' id='password' required/>
                 <label for='password'>Digite sua senha</label>
               </div>
             </div>
