@@ -10,10 +10,19 @@
 <body>
 
   <?php
-  require_once './models/connection.php'
 
-  // if ($__POST['btn_login']) {
-  // }
+  require_once './controller/User.php';
+
+  if ($_POST['username']) {
+
+    $user = User::verify($_POST['username'], $_POST['password']);
+
+    if ($user) :
+      header('Location: dashboard.php');
+    else :
+      echo '<div class="card-panel red lighten-3">Usuario ou senha invalidos</div>';
+    endif;
+  }
   ?>
 
   <div class="section"></div>
@@ -28,7 +37,7 @@
       <div class="container">
         <div class="z-depth-1 grey lighten-4 row" style="display: inline-block; padding: 32px 48px 0px 48px; border: 1px solid #EEE;">
 
-          <form action="<?php echo $__SERVER['PHP-SELF'] ?>;" class="col s12" method="post">
+          <form action="<?php echo $__SERVER['PHP-SELF']; ?>" class="col s12" method="post">
             <div class='row'>
               <div class='col s12'>
               </div>
@@ -36,14 +45,14 @@
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='email' name='email' id='email' />
-                <label for='email'>Digite seu login</label>
+                <input class='validate' type='text' name='username' id='username' required/>
+                <label for='username'>Digite o nome do usuario</label>
               </div>
             </div>
 
             <div class='row'>
               <div class='input-field col s12'>
-                <input class='validate' type='password' name='password' id='password' />
+                <input class='validate' type='password' name='password' id='password' required/>
                 <label for='password'>Digite sua senha</label>
               </div>
             </div>
