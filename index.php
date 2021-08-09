@@ -11,6 +11,7 @@
 
   <?php
 
+  session_start();
   require_once './controller/User.php';
 
   if ($_POST['username']) {
@@ -18,6 +19,7 @@
     $user = User::verify($_POST['username'], $_POST['password']);
 
     if ($user) :
+      $_SESSION['user'] = $user;
       header('Location: dashboard.php');
     else :
       echo '<div class="card-panel red lighten-3">Usuario ou senha invalidos</div>';
