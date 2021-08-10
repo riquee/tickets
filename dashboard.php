@@ -41,7 +41,7 @@
 
     <tbody>
       <?php
-    
+
       foreach ($tickets as $row) {
         print "
         <tr>
@@ -49,13 +49,12 @@
         <td>" . $row['data'] . " </td>
         <td>" . $row['descricao'] . " </td>
         <td>" . $row['cliente_final'] . " </td>
-        <td>" . $row['agf_id'] . " </td>
-        <td>" . $row['user_id'] . " </td>
+        <td>" . $row['agf_nome'] . " </td>
+        <td>" . $row['user_nome'] . " </td>
         <td>" . $row['problema'] . " </td>
         </tr>
       ";
       }
-      
       ?>
     </tbody>
   </table>
