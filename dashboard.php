@@ -43,17 +43,18 @@
       <?php
 
       foreach ($tickets as $row) {
-        print "
+      ?>
         <tr>
-        <td>" . $row['id'] . " </td>
-        <td>" . $row['data'] . " </td>
-        <td>" . $row['descricao'] . " </td>
-        <td>" . $row['cliente_final'] . " </td>
-        <td>" . $row['agf_nome'] . " </td>
-        <td>" . $row['user_nome'] . " </td>
-        <td>" . $row['problema'] . " </td>
+          <td><?php echo $row['id'] ?></td>
+          <td><?php echo $row['data'] ?></td>
+          <td><?php echo $row['descricao'] ?></td>
+          <td><?php echo $row['cliente_final'] ?></td>
+          <td><?php echo $row['agf_nome'] ?></td>
+          <td><?php echo $row['user_nome'] ?></td>
+          <td><?php echo $row['problema'] ?></td>
+          <td><button type="button">Excluir</button></td>
         </tr>
-      ";
+      <?php
       }
       ?>
     </tbody>
